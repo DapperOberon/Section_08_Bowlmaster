@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114261064162567266}
   m_Layer: 0
   m_Name: Bowling_Pin_03
-  m_TagString: Untagged
+  m_TagString: Pin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 114280891482103908}
   m_Layer: 0
   m_Name: Bowling_Pin_07
-  m_TagString: Untagged
+  m_TagString: Pin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,7 +63,7 @@ GameObject:
   - component: {fileID: 114216133876812686}
   m_Layer: 0
   m_Name: Bowling_Pin_02
-  m_TagString: Untagged
+  m_TagString: Pin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 114341488373754202}
   m_Layer: 0
   m_Name: Bowling_Pin_04
-  m_TagString: Untagged
+  m_TagString: Pin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 114914665590538322}
   m_Layer: 0
   m_Name: Bowling_Pin_01
-  m_TagString: Untagged
+  m_TagString: Pin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 114587348254232516}
   m_Layer: 0
   m_Name: Bowling_Pin_08
-  m_TagString: Untagged
+  m_TagString: Pin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 114628999678713026}
   m_Layer: 0
   m_Name: Bowling_Pin_10
-  m_TagString: Untagged
+  m_TagString: Pin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -275,7 +275,7 @@ GameObject:
   - component: {fileID: 114588107313677786}
   m_Layer: 0
   m_Name: Bowling_Pin_09
-  m_TagString: Untagged
+  m_TagString: Pin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -294,7 +294,7 @@ GameObject:
   - component: {fileID: 114660335784189998}
   m_Layer: 0
   m_Name: Bowling_Pin_05
-  m_TagString: Untagged
+  m_TagString: Pin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -347,7 +347,7 @@ GameObject:
   - component: {fileID: 114368845486293738}
   m_Layer: 0
   m_Name: Bowling_Pin_06
-  m_TagString: Untagged
+  m_TagString: Pin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -20,4 +20,9 @@ public class Pin : MonoBehaviour {
 			return false;
 		}	
 	}
+
+	private void OnTriggerExit(Collider collider)
+	{
+		Destroy(gameObject);
+	}
 }

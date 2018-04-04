@@ -9,6 +9,7 @@ public class BowlingBall : MonoBehaviour {
 	private Rigidbody rb;
 	private AudioSource audioSource;
 	private bool bHitGround = false;
+	private Vector3 startPos;
 
 	// Use this for initialization
 	void Start ()
@@ -18,6 +19,8 @@ public class BowlingBall : MonoBehaviour {
 		rb.useGravity = false;
 		audioSource = this.GetComponent<AudioSource>();
 		if (!audioSource) { Debug.LogWarning(this.name + ": Cannot find an audiosource!"); }
+
+		startPos = transform.position;
 	}
 
 	public void Launch(Vector3 velocity)
@@ -25,6 +28,17 @@ public class BowlingBall : MonoBehaviour {
 		bHasLaunched = true;
 		rb.useGravity = true;
 		rb.velocity = velocity;
+	}
+
+	public void Reset()
+	{
+		Debug.Log("reseting ball");
+		transform.position = startPos;
+		rb.velocity = Vector3.zero;
+		rb.angularVelocity = Vector3.zero;
+		bHasLaunched = false;
+		bHitGround = false;
+		rb.useGravity = false;
 	}
 
 	private void OnCollisionEnter()

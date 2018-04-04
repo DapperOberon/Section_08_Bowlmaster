@@ -152,6 +152,46 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1067149582423924, guid: f002cd93661ee0b44adb20898c613787, type: 2}
+      propertyPath: m_TagString
+      value: BowlingPin
+      objectReference: {fileID: 0}
+    - target: {fileID: 1139133173168064, guid: f002cd93661ee0b44adb20898c613787, type: 2}
+      propertyPath: m_TagString
+      value: BowlingPin
+      objectReference: {fileID: 0}
+    - target: {fileID: 1376565712439272, guid: f002cd93661ee0b44adb20898c613787, type: 2}
+      propertyPath: m_TagString
+      value: BowlingPin
+      objectReference: {fileID: 0}
+    - target: {fileID: 1570053015738532, guid: f002cd93661ee0b44adb20898c613787, type: 2}
+      propertyPath: m_TagString
+      value: BowlingPin
+      objectReference: {fileID: 0}
+    - target: {fileID: 1585320204972792, guid: f002cd93661ee0b44adb20898c613787, type: 2}
+      propertyPath: m_TagString
+      value: BowlingPin
+      objectReference: {fileID: 0}
+    - target: {fileID: 1292975012156862, guid: f002cd93661ee0b44adb20898c613787, type: 2}
+      propertyPath: m_TagString
+      value: BowlingPin
+      objectReference: {fileID: 0}
+    - target: {fileID: 1627659128305086, guid: f002cd93661ee0b44adb20898c613787, type: 2}
+      propertyPath: m_TagString
+      value: BowlingPin
+      objectReference: {fileID: 0}
+    - target: {fileID: 1163662845925370, guid: f002cd93661ee0b44adb20898c613787, type: 2}
+      propertyPath: m_TagString
+      value: BowlingPin
+      objectReference: {fileID: 0}
+    - target: {fileID: 1271559555608550, guid: f002cd93661ee0b44adb20898c613787, type: 2}
+      propertyPath: m_TagString
+      value: BowlingPin
+      objectReference: {fileID: 0}
+    - target: {fileID: 1336877794734614, guid: f002cd93661ee0b44adb20898c613787, type: 2}
+      propertyPath: m_TagString
+      value: BowlingPin
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f002cd93661ee0b44adb20898c613787, type: 2}
   m_IsPrefabParent: 0
@@ -303,6 +343,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ed548e877a9ab245b75d94450e8753f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lastStandingCount: -1
+  settleTime: 3
   pinText: {fileID: 442548201}
 --- !u!1001 &889881923
 Prefab:
@@ -347,6 +389,10 @@ Prefab:
         type: 2}
       propertyPath: xNudge
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1810598418031624, guid: f4b096b32b8589e43be971987a735f79, type: 2}
+      propertyPath: m_TagString
+      value: BowlingBall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f4b096b32b8589e43be971987a735f79, type: 2}
