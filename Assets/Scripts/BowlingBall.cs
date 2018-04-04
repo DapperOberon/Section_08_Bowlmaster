@@ -22,7 +22,6 @@ public class BowlingBall : MonoBehaviour {
 
 	public void Launch(Vector3 velocity)
 	{
-		//rb.AddForce(new Vector3(0, 0, force), ForceMode.Impulse);
 		bHasLaunched = true;
 		rb.useGravity = true;
 		rb.velocity = velocity;

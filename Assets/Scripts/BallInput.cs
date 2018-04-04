@@ -19,7 +19,6 @@ public class BallInput : MonoBehaviour {
 		// Capture time & postition of drag start
 		startTime = Time.time;
 		startPos = Input.mousePosition;
-		Debug.Log("Start: " + startTime + ", " + startPos);
 	}
 
 	public void DragEnd()
@@ -36,9 +35,11 @@ public class BallInput : MonoBehaviour {
 
 		Vector3 velocity = new Vector3(xVelocity, 0, zVelocity);
 
-		Debug.Log("End: " + dragDuration + ", " + velocity);
-
-		ball.Launch(velocity);
+		if (!ball.bHasLaunched) // Make sure cannot launch ball twice
+		{
+			ball.Launch(velocity);
+		}
+		
 	}
 
 	public void MoveStart(float xNudge)
@@ -48,7 +49,6 @@ public class BallInput : MonoBehaviour {
 			float newXPos = Mathf.Clamp(ball.transform.position.x + xNudge, -.525f, .525f);
 			//Mathf.Clamp(newXPos, -0.525f, 0.525f);
 			ball.transform.position = new Vector3(newXPos, ball.transform.position.y, ball.transform.position.z);
-			Debug.Log("Nudge amount: " + newXPos);
 		}
 		
 	}
