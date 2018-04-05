@@ -5,6 +5,7 @@ using UnityEngine;
 public class Pin : MonoBehaviour {
 
 	public float standingThreshold = 5f;
+	public float distanceToRaise = 0.5f;
 
 	public bool IsStanding()
 	{
@@ -19,6 +20,24 @@ public class Pin : MonoBehaviour {
 		{
 			return false;
 		}	
+	}
+
+	public void Raise()
+	{
+		if (IsStanding())
+		{
+			GetComponent<Rigidbody>().useGravity = false;
+			transform.Translate(0, distanceToRaise, 0);
+		}
+	}
+
+	public void Lower()
+	{
+		if (IsStanding())
+		{
+			transform.Translate(0, -distanceToRaise, 0);
+			GetComponent<Rigidbody>().useGravity = true;
+		}
 	}
 
 	private void OnTriggerExit(Collider collider)
