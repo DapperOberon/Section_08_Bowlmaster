@@ -32,7 +32,7 @@ public class BowlingBall : MonoBehaviour {
 
 	public void Reset()
 	{
-		Debug.Log("reseting ball");
+		Debug.Log("Reseting ball");
 		transform.position = startPos;
 		rb.velocity = Vector3.zero;
 		rb.angularVelocity = Vector3.zero;

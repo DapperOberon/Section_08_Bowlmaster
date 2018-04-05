@@ -20,6 +20,117 @@ public class ActionMasterTest {
 		Assert.AreEqual(ActionMaster.Action.EndTurn, actionMaster.Bowl(10));
 	}
 
+	[Test]
+	public void T02Bowl8ReturnsTidy()
+	{
+		Assert.AreEqual(ActionMaster.Action.Tidy, actionMaster.Bowl(8));
+	}
+
+	[Test]
+	public void T03Bowl82SpareReturnsEndTurn()
+	{
+		actionMaster.Bowl(8);
+		Assert.AreEqual(ActionMaster.Action.EndTurn, actionMaster.Bowl(2));
+	}
+
+	[Test]
+	public void T04GutterTidy()
+	{
+		actionMaster.Bowl(2);
+		Assert.AreEqual(ActionMaster.Action.EndTurn, actionMaster.Bowl(0));
+	}
+
+	[Test]
+	public void T05CheckResetStrikeLastFrame()
+	{
+		int[] rolls = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
+		foreach(int roll in rolls)
+		{
+			actionMaster.Bowl(roll);
+		}
+
+		Assert.AreEqual(ActionMaster.Action.Reset, actionMaster.Bowl(10));
+	}
+
+	[Test]
+	public void T06CheckResetSpareLastFrame()
+	{
+		int[] rolls = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
+		foreach (int roll in rolls)
+		{
+			actionMaster.Bowl(roll);
+		}
+		Assert.AreEqual(ActionMaster.Action.Reset, actionMaster.Bowl(9));
+	}
+
+	[Test]
+	public void T07EndGame()
+	{
+		int[] rolls = { 8, 2, 7, 3, 3, 4, 10, 2, 8, 10, 10, 8, 0, 10, 8, 2 };
+		foreach (int roll in rolls)
+		{
+			actionMaster.Bowl(roll);
+		}
+		Assert.AreEqual(ActionMaster.Action.EndGame, actionMaster.Bowl(9));
+	}
+
+	[Test]
+	public void T08GameEndAt20()
+	{
+		int[] rolls = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
+		foreach (int roll in rolls)
+		{
+			actionMaster.Bowl(roll);
+		}
+		Assert.AreEqual(ActionMaster.Action.EndGame, actionMaster.Bowl(1));
+	}
+
+	[Test]
+	public void T09EndGame()
+	{
+		int[] rolls = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 10 };
+		foreach (int roll in rolls)
+		{
+			actionMaster.Bowl(roll);
+		}
+		Assert.AreEqual(ActionMaster.Action.Tidy, actionMaster.Bowl(5));
+	}
+
+	[Test]
+	public void T10EndGame()
+	{
+		int[] rolls = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 10 };
+		foreach (int roll in rolls)
+		{
+			actionMaster.Bowl(roll);
+		}
+		Assert.AreEqual(ActionMaster.Action.Tidy, actionMaster.Bowl(0));
+	}
+
+	[Test]
+	public void T11Nathan10PinSecondBowl()
+	{
+		int[] rolls = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 5 };
+		foreach (int roll in rolls)
+		{
+			actionMaster.Bowl(roll);
+		}
+		Assert.AreEqual(ActionMaster.Action.EndTurn, actionMaster.Bowl(1));
+	}
+
+	[Test]
+	public void T12Dondi10thFrameTurkey()
+	{
+		int[] rolls = { 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1};
+			foreach (int roll in rolls)
+		{
+			actionMaster.Bowl(roll);
+		}
+		Assert.AreEqual(ActionMaster.Action.Reset, actionMaster.Bowl(10));
+		Assert.AreEqual(ActionMaster.Action.Reset, actionMaster.Bowl(10));
+		Assert.AreEqual(ActionMaster.Action.EndGame, actionMaster.Bowl(10));
+	}
+
 	//[Test]
 	//public void T01Bowl23()
 	//{
