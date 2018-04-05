@@ -24,9 +24,9 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 3
+  m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: bd10230f69a3ead4890ea5533a050ad0, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1107410051}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.78917986, g: 0.80507064, b: 0.8635802, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -152,45 +152,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 1067149582423924, guid: f002cd93661ee0b44adb20898c613787, type: 2}
-      propertyPath: m_TagString
-      value: BowlingPin
+    - target: {fileID: 1484265910184732, guid: f002cd93661ee0b44adb20898c613787, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1139133173168064, guid: f002cd93661ee0b44adb20898c613787, type: 2}
-      propertyPath: m_TagString
-      value: BowlingPin
-      objectReference: {fileID: 0}
-    - target: {fileID: 1376565712439272, guid: f002cd93661ee0b44adb20898c613787, type: 2}
-      propertyPath: m_TagString
-      value: BowlingPin
-      objectReference: {fileID: 0}
-    - target: {fileID: 1570053015738532, guid: f002cd93661ee0b44adb20898c613787, type: 2}
-      propertyPath: m_TagString
-      value: BowlingPin
-      objectReference: {fileID: 0}
-    - target: {fileID: 1585320204972792, guid: f002cd93661ee0b44adb20898c613787, type: 2}
-      propertyPath: m_TagString
-      value: BowlingPin
-      objectReference: {fileID: 0}
-    - target: {fileID: 1292975012156862, guid: f002cd93661ee0b44adb20898c613787, type: 2}
-      propertyPath: m_TagString
-      value: BowlingPin
-      objectReference: {fileID: 0}
-    - target: {fileID: 1627659128305086, guid: f002cd93661ee0b44adb20898c613787, type: 2}
-      propertyPath: m_TagString
-      value: BowlingPin
-      objectReference: {fileID: 0}
-    - target: {fileID: 1163662845925370, guid: f002cd93661ee0b44adb20898c613787, type: 2}
-      propertyPath: m_TagString
-      value: BowlingPin
-      objectReference: {fileID: 0}
-    - target: {fileID: 1271559555608550, guid: f002cd93661ee0b44adb20898c613787, type: 2}
-      propertyPath: m_TagString
-      value: BowlingPin
-      objectReference: {fileID: 0}
-    - target: {fileID: 1336877794734614, guid: f002cd93661ee0b44adb20898c613787, type: 2}
-      propertyPath: m_TagString
-      value: BowlingPin
+    - target: {fileID: 54024184054827224, guid: f002cd93661ee0b44adb20898c613787,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f002cd93661ee0b44adb20898c613787, type: 2}
@@ -544,6 +513,7 @@ MonoBehaviour:
   lastStandingCount: -1
   settleTime: 3
   pinText: {fileID: 442548201}
+  pinSet: {fileID: 1484265910184732, guid: f002cd93661ee0b44adb20898c613787, type: 2}
 --- !u!95 &724673868
 Animator:
   serializedVersion: 3
@@ -599,15 +569,6 @@ Prefab:
     - target: {fileID: 4265227298554846, guid: f4b096b32b8589e43be971987a735f79, type: 2}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114749955748256576, guid: f4b096b32b8589e43be971987a735f79,
-        type: 2}
-      propertyPath: xNudge
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1810598418031624, guid: f4b096b32b8589e43be971987a735f79, type: 2}
-      propertyPath: m_TagString
-      value: BowlingBall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f4b096b32b8589e43be971987a735f79, type: 2}
@@ -695,7 +656,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1107410051
 Light:
   m_ObjectHideFlags: 0
@@ -925,7 +886,7 @@ Camera:
   m_GameObject: {fileID: 1319588711}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.47450984, g: 0.1921569, b: 0.1921569, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -1691,8 +1652,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 5, z: 1}
+  m_Center: {x: 0, y: -2, z: 0}
 --- !u!33 &1778991678
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1707,8 +1668,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1778991675}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
-  m_LocalScale: {x: 1.05, y: 0.01, z: 20}
+  m_LocalPosition: {x: 0, y: -0.05, z: 10}
+  m_LocalScale: {x: 1.05, y: 0.1, z: 20}
   m_Children: []
   m_Father: {fileID: 2093133306}
   m_RootOrder: 0

@@ -4,29 +4,27 @@ using UnityEngine;
 
 public class Pin : MonoBehaviour {
 
-	public float standingThreshold = 5f;
+	public float standingThreshold = .97f;
 	public float distanceToRaise = 0.5f;
+	private Rigidbody rb;
 
+	private void Start()
+	{
+		rb = this.GetComponent<Rigidbody>();
+		if (!rb) { Debug.LogError(this.name + ": Cannot find Rigidbody"); }
+		rb.useGravity = true;
+	}
 	public bool IsStanding()
 	{
-		float xTilt = Mathf.Abs(transform.rotation.eulerAngles.x);
-		float zTilt = Mathf.Abs(transform.rotation.eulerAngles.z);
-
-		if(xTilt < standingThreshold || zTilt < standingThreshold)
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}	
+		return (transform.up.y > standingThreshold);
 	}
 
 	public void Raise()
 	{
 		if (IsStanding())
 		{
-			GetComponent<Rigidbody>().useGravity = false;
+			rb.useGravity = false;
+			rb.constraints = RigidbodyConstraints.FreezeAll;
 			transform.Translate(0, distanceToRaise, 0);
 		}
 	}
@@ -36,7 +34,8 @@ public class Pin : MonoBehaviour {
 		if (IsStanding())
 		{
 			transform.Translate(0, -distanceToRaise, 0);
-			GetComponent<Rigidbody>().useGravity = true;
+			rb.useGravity = true;
+			rb.constraints = RigidbodyConstraints.None;
 		}
 	}
 

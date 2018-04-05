@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114261064162567266}
   m_Layer: 0
   m_Name: Bowling_Pin_03
-  m_TagString: Pin
+  m_TagString: BowlingPin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 114280891482103908}
   m_Layer: 0
   m_Name: Bowling_Pin_07
-  m_TagString: Pin
+  m_TagString: BowlingPin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,7 +63,7 @@ GameObject:
   - component: {fileID: 114216133876812686}
   m_Layer: 0
   m_Name: Bowling_Pin_02
-  m_TagString: Pin
+  m_TagString: BowlingPin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 114341488373754202}
   m_Layer: 0
   m_Name: Bowling_Pin_04
-  m_TagString: Pin
+  m_TagString: BowlingPin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 114914665590538322}
   m_Layer: 0
   m_Name: Bowling_Pin_01
-  m_TagString: Pin
+  m_TagString: BowlingPin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 114587348254232516}
   m_Layer: 0
   m_Name: Bowling_Pin_08
-  m_TagString: Pin
+  m_TagString: BowlingPin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 114628999678713026}
   m_Layer: 0
   m_Name: Bowling_Pin_10
-  m_TagString: Pin
+  m_TagString: BowlingPin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -275,7 +275,7 @@ GameObject:
   - component: {fileID: 114588107313677786}
   m_Layer: 0
   m_Name: Bowling_Pin_09
-  m_TagString: Pin
+  m_TagString: BowlingPin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -294,7 +294,7 @@ GameObject:
   - component: {fileID: 114660335784189998}
   m_Layer: 0
   m_Name: Bowling_Pin_05
-  m_TagString: Pin
+  m_TagString: BowlingPin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -347,7 +347,7 @@ GameObject:
   - component: {fileID: 114368845486293738}
   m_Layer: 0
   m_Name: Bowling_Pin_06
-  m_TagString: Pin
+  m_TagString: BowlingPin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1179,11 +1179,11 @@ Rigidbody:
   m_Mass: 1.53
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!54 &54121796315441422
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -1194,11 +1194,11 @@ Rigidbody:
   m_Mass: 1.53
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!54 &54211158284866094
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -1209,11 +1209,11 @@ Rigidbody:
   m_Mass: 1.53
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!54 &54229696320529358
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -1224,11 +1224,11 @@ Rigidbody:
   m_Mass: 1.53
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!54 &54328469536949612
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -1239,11 +1239,11 @@ Rigidbody:
   m_Mass: 1.53
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!54 &54382542211392436
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -1254,11 +1254,11 @@ Rigidbody:
   m_Mass: 1.53
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!54 &54433642527824202
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -1269,11 +1269,11 @@ Rigidbody:
   m_Mass: 1.53
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!54 &54666455506936206
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -1284,11 +1284,11 @@ Rigidbody:
   m_Mass: 1.53
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!54 &54788123328493676
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -1299,11 +1299,11 @@ Rigidbody:
   m_Mass: 1.53
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!54 &54803582773761476
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -1314,11 +1314,11 @@ Rigidbody:
   m_Mass: 1.53
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!64 &64067141264729448
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -1470,7 +1470,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d10deefd89cc2c2479d97fd258fda922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standingThreshold: 5
+  standingThreshold: 0.97
+  distanceToRaise: 0.5
 --- !u!114 &114261064162567266
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1482,7 +1483,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d10deefd89cc2c2479d97fd258fda922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standingThreshold: 5
+  standingThreshold: 0.97
+  distanceToRaise: 0.5
 --- !u!114 &114280891482103908
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1494,7 +1496,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d10deefd89cc2c2479d97fd258fda922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standingThreshold: 5
+  standingThreshold: 0.97
+  distanceToRaise: 0.5
 --- !u!114 &114341488373754202
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1506,7 +1509,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d10deefd89cc2c2479d97fd258fda922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standingThreshold: 5
+  standingThreshold: 0.97
+  distanceToRaise: 0.5
 --- !u!114 &114368845486293738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1518,7 +1522,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d10deefd89cc2c2479d97fd258fda922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standingThreshold: 5
+  standingThreshold: 0.97
+  distanceToRaise: 0.5
 --- !u!114 &114587348254232516
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1530,7 +1535,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d10deefd89cc2c2479d97fd258fda922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standingThreshold: 5
+  standingThreshold: 0.97
+  distanceToRaise: 0.5
 --- !u!114 &114588107313677786
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1542,7 +1548,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d10deefd89cc2c2479d97fd258fda922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standingThreshold: 5
+  standingThreshold: 0.97
+  distanceToRaise: 0.5
 --- !u!114 &114628999678713026
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1554,7 +1561,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d10deefd89cc2c2479d97fd258fda922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standingThreshold: 5
+  standingThreshold: 0.97
+  distanceToRaise: 0.5
 --- !u!114 &114660335784189998
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1566,7 +1574,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d10deefd89cc2c2479d97fd258fda922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standingThreshold: 5
+  standingThreshold: 0.97
+  distanceToRaise: 0.5
 --- !u!114 &114914665590538322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1578,4 +1587,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d10deefd89cc2c2479d97fd258fda922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standingThreshold: 5
+  standingThreshold: 0.97
+  distanceToRaise: 0.5

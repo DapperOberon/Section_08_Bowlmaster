@@ -11,6 +11,7 @@ public class PinSetter : MonoBehaviour {
 
 
 	public Text pinText;
+	public GameObject pinSet;
 	private Pin[] pins;
 	private BowlingBall ball;
 	private bool bBallEnteredBox = false;
@@ -22,11 +23,11 @@ public class PinSetter : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		
+
+		pinText.text = string.Format("Standing Pins: {0}", CountStanding());
 
 		if (bBallEnteredBox)
 		{
-			pinText.text = string.Format("Standing Pins: {0}", CountStanding());
 			CheckStanding();
 		}
 	}
@@ -93,6 +94,8 @@ public class PinSetter : MonoBehaviour {
 	public void RenewPins()
 	{
 		Debug.Log("Renewing pins");
+
+		Instantiate(pinSet, new Vector3(0, 0.5f, 18.29f), Quaternion.identity);
 	}
 
 	private void OnTriggerEnter(Collider collider)
