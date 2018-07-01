@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PinSetter : MonoBehaviour {
 
 	public int lastStandingCount = -1;
+	public int lastSettledCount = 10;
 	public float settleTime = 2f;
 	private float lastChangeTime;
 
@@ -16,9 +17,13 @@ public class PinSetter : MonoBehaviour {
 	private BowlingBall ball;
 	private bool bBallEnteredBox = false;
 
+	private ActionMaster AM = new ActionMaster();
+	private Animator animator;
+
 	private void Start()
 	{
 		ball = GameObject.FindObjectOfType<BowlingBall>();
+		animator = this.GetComponent<Animator>();
 	}
 
 	// Update is called once per frame
@@ -65,9 +70,31 @@ public class PinSetter : MonoBehaviour {
 
 	public void PinsHaveSettled()
 	{
-		ball.Reset();
+		int standing = CountStanding();
+		int pinFall = lastSettledCount - standing;
+		lastSettledCount = standing;
+
+		ActionMaster.Action action = AM.Bowl(pinFall);
+
+		if(action == ActionMaster.Action.Tidy)
+		{
+			animator.SetTrigger("tidyTrigger");
+		} else if (action == ActionMaster.Action.EndTurn)
+		{
+			animator.SetTrigger("resetTrigger");
+			lastSettledCount = 10;
+		} else if (action == ActionMaster.Action.Reset)
+		{
+			animator.SetTrigger("resetTrigger");
+			lastSettledCount = 10;
+		} else if (action == ActionMaster.Action.EndGame)
+		{
+			throw new UnityException("Don't know how to handle end game scenario");
+		}
+
 		lastStandingCount = -1; // Pins settles (new frame)
 		bBallEnteredBox = false;
+		ball.Reset();
 		pinText.color = Color.green;
 	}
 
