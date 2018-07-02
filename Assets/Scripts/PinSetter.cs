@@ -15,7 +15,7 @@ public class PinSetter : MonoBehaviour {
 	public GameObject pinSet;
 	private Pin[] pins;
 	private BowlingBall ball;
-	private bool bBallEnteredBox = false;
+	private bool bBallOutOfPlay = false;
 
 	private ActionMaster AM = new ActionMaster();
 	private Animator animator;
@@ -31,7 +31,7 @@ public class PinSetter : MonoBehaviour {
 
 		pinText.text = string.Format("Standing Pins: {0}", CountStanding());
 
-		if (bBallEnteredBox)
+		if (bBallOutOfPlay)
 		{
 			CheckStanding();
 		}
@@ -93,7 +93,7 @@ public class PinSetter : MonoBehaviour {
 		}
 
 		lastStandingCount = -1; // Pins settles (new frame)
-		bBallEnteredBox = false;
+		bBallOutOfPlay = false;
 		ball.Reset();
 		pinText.color = Color.green;
 	}
@@ -125,12 +125,11 @@ public class PinSetter : MonoBehaviour {
 		Instantiate(pinSet, new Vector3(0, 0.5f, 18.29f), Quaternion.identity);
 	}
 
-	private void OnTriggerEnter(Collider collider)
+	
+
+	public void SetBallEnteredBox()
 	{
-		if (collider.CompareTag("BowlingBall"))
-		{
-			bBallEnteredBox = true;
-			pinText.color = Color.red;
-		}
+		bBallOutOfPlay = true;
+		pinText.color = Color.red;
 	}
 }
