@@ -7,6 +7,7 @@ public class Pin : MonoBehaviour {
 	public float standingThreshold = .97f;
 	public float distanceToRaise = 0.5f;
 	private Rigidbody rb;
+	private Quaternion rotZero = Quaternion.Euler(0, 0,0);
 
 	private void Start()
 	{
@@ -26,6 +27,7 @@ public class Pin : MonoBehaviour {
 			rb.useGravity = false;
 			rb.constraints = RigidbodyConstraints.FreezeAll;
 			transform.Translate(0, distanceToRaise, 0);
+			transform.rotation = rotZero;
 		}
 	}
 
