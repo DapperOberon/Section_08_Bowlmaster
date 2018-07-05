@@ -22,7 +22,7 @@ public class ActionMaster {
 	private int[] bowls = new int[21];
 	private int bowl = 1;
 
-	public Action Bowl(int pins) // TODO make private
+	private Action Bowl(int pins) // TODO make private
 	{
 		if(pins < 0 || pins > 10) { throw new UnityException("Incorrect number of pins. Must be between 0 and 10"); }
 

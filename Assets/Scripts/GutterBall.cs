@@ -11,11 +11,5 @@ public class GutterBall : MonoBehaviour {
 		pinSetter = GameObject.FindObjectOfType<PinSetter>();
 	}
 
-	private void OnTriggerExit(Collider collider)
-	{
-		if(collider.gameObject.CompareTag("BowlingBall"))
-		{
-			pinSetter.SetBallEnteredBox();
-		}
-	}
+	
 }
