@@ -6,10 +6,23 @@ public class ActionMaster {
 
 	public enum Action { Tidy, Reset, EndTurn, EndGame };
 
+	public static Action NextAction(List<int> pinFalls)
+	{
+		ActionMaster am = new ActionMaster();
+		Action currentAction = new Action();
+
+		foreach(int pinFall in pinFalls)
+		{
+			currentAction = am.Bowl(pinFall);
+		}
+
+		return currentAction;
+	}
+
 	private int[] bowls = new int[21];
 	private int bowl = 1;
 
-	public Action Bowl(int pins)
+	public Action Bowl(int pins) // TODO make private
 	{
 		if(pins < 0 || pins > 10) { throw new UnityException("Incorrect number of pins. Must be between 0 and 10"); }
 
@@ -70,6 +83,8 @@ public class ActionMaster {
 
 		throw new UnityException("Not sure what action to return!");
 	}
+
+	
 
 	private bool IsBowl21Awarded()
 	{
