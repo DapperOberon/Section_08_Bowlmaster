@@ -32,7 +32,6 @@ public class BowlingBall : MonoBehaviour {
 
 	public void Reset()
 	{
-		Debug.Log("Reseting ball");
 		transform.position = startPos;
 		transform.rotation = Quaternion.identity;
 		rb.velocity = Vector3.zero;

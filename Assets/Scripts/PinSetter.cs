@@ -19,8 +19,6 @@ public class PinSetter : MonoBehaviour {
 
 	public void RaisePins()
 	{
-		Debug.Log("Raising pins");
-
 		foreach (Pin p in GameObject.FindObjectsOfType<Pin>())
 		{
 			p.Raise();
@@ -29,8 +27,6 @@ public class PinSetter : MonoBehaviour {
 
 	public void LowerPins()
 	{
-		Debug.Log("Lowering pins");
-
 		foreach (Pin p in GameObject.FindObjectsOfType<Pin>())
 		{
 			p.Lower();
@@ -39,8 +35,6 @@ public class PinSetter : MonoBehaviour {
 
 	public void RenewPins()
 	{
-		Debug.Log("Renewing pins");
-
 		Instantiate(pinSet, new Vector3(0, 0.5f, 18.29f), Quaternion.identity);
 	}
 
@@ -62,7 +56,8 @@ public class PinSetter : MonoBehaviour {
 		}
 		else if (action == ActionMaster.Action.EndGame)
 		{
-			throw new UnityException("Don't know how to handle end game scenario");
+			Debug.Log("End of Game!");
+			//throw new UnityException("Don't know how to handle end game scenario");
 		}
 	}
 }

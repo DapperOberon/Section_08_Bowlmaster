@@ -4,23 +4,34 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
-	private List<int> bowls = new List<int>();
+	private List<int> rolls = new List<int>();
 
+	private ScoreDisplay scoreDisplay;
 	private PinSetter pinSetter;
 	private BowlingBall ball;
 
 	// Use this for initialization
 	void Start () {
+		scoreDisplay = FindObjectOfType<ScoreDisplay>();
 		pinSetter = FindObjectOfType<PinSetter>();
 		ball = FindObjectOfType<BowlingBall>();
 	}
 	
 	public void Bowl(int pinFall)
 	{
-		bowls.Add(pinFall);
 
-		ActionMaster.Action nextAction = ActionMaster.NextAction(bowls);
-		pinSetter.PerformAction(nextAction);
-		ball.Reset();
+			rolls.Add(pinFall);
+			ball.Reset();
+			pinSetter.PerformAction(ActionMaster.NextAction(rolls));
+
+
+		try
+		{
+			scoreDisplay.FillRolls(rolls);
+			scoreDisplay.FillFrames(ScoreMaster.ScoreCumulative(rolls));
+		} catch
+		{
+			Debug.LogWarning("Something went wrong in FillRoll()");
+		}
 	}
 }

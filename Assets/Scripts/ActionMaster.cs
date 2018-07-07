@@ -2,93 +2,61 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ActionMaster {
+public static class ActionMaster {
+	public enum Action { Tidy, Reset, EndTurn, EndGame, Undefined };
 
-	public enum Action { Tidy, Reset, EndTurn, EndGame };
-
-	public static Action NextAction(List<int> pinFalls)
+	public static Action NextAction(List<int> rolls)
 	{
-		ActionMaster am = new ActionMaster();
-		Action currentAction = new Action();
+		Action nextAction = Action.Undefined;
 
-		foreach(int pinFall in pinFalls)
-		{
-			currentAction = am.Bowl(pinFall);
-		}
+		for (int i = 0; i < rolls.Count; i++)
+		{ // Step through rolls
 
-		return currentAction;
-	}
-
-	private int[] bowls = new int[21];
-	private int bowl = 1;
-
-	private Action Bowl(int pins) // TODO make private
-	{
-		if(pins < 0 || pins > 10) { throw new UnityException("Incorrect number of pins. Must be between 0 and 10"); }
-
-		bowls[bowl - 1] = pins;
-
-		// Bowl 21
-		if(bowl == 21)
-		{
-			return Action.EndGame;
-		}
-
-		//if (bowl == 20 && Bowl21Awarded())
-		//{
-		//	bowl += 1;
-		//	return Action.Tidy;
-		//}
-
-		// Bowl 19 or 20 and got a spare
-		if(bowl >= 19 && pins == 10)
-		{
-			bowl += 1;
-			return Action.Reset;
-		} else if (bowl == 20) // Bowl 20 and did not get a spare
-		{
-			bowl += 1;
-			if(bowls[19-1] == 10 && bowls[20-1] == 0) // Strike on bowl 19 but not strike on bowl 20
+			if (i == 20)
 			{
-				return Action.Tidy;
+				nextAction = Action.EndGame;
 			}
-			else if ((bowls[19 - 1] + bowls[20 - 1]) % 10 == 0) // Spare or strike
+			else if (i >= 18 && rolls[i] == 10)
+			{ // Handle last-frame special cases
+				nextAction = Action.Reset;
+			}
+			else if (i == 19)
 			{
-				return Action.Reset;
-			} else if (IsBowl21Awarded())
-			{
-				return Action.Tidy;
-			} else // End Game
-			{
-				return Action.EndGame;
+				if (rolls[18] == 10 && rolls[19] == 0)
+				{
+					nextAction = Action.Tidy;
+				}
+				else if (rolls[18] + rolls[19] == 10)
+				{
+					nextAction = Action.Reset;
+				}
+				else if (rolls[18] + rolls[19] >= 10)
+				{  // Roll 21 awarded
+					nextAction = Action.Tidy;
+				}
+				else
+				{
+					nextAction = Action.EndGame;
+				}
+			}
+			else if (i % 2 == 0)
+			{ // First bowl of frame
+				if (rolls[i] == 10)
+				{
+					rolls.Insert(i, 0); // Insert virtual 0 after strike
+					nextAction = Action.EndTurn;
+				}
+				else
+				{
+					nextAction = Action.Tidy;
+				}
+			}
+			else
+			{ // Second bowl of frame
+				nextAction = Action.EndTurn;
 			}
 		}
-		
-		if(bowl % 2 != 0) // First bowl of frame
-		{
-			if(pins == 10)
-			{
-				bowl += 2; // Because it skips one bowl and goes to next frame
-				return Action.EndTurn;
-			} else
-			{
-				bowl += 1; // Moves to next bowl
-				return Action.Tidy;
-			}
-		} else if (bowl % 2 == 0) // Second bowl of frame
-		{
-			bowl += 1;
-			return Action.EndTurn;
-		}
 
-		throw new UnityException("Not sure what action to return!");
-	}
-
-	
-
-	private bool IsBowl21Awarded()
-	{
-		// Remember that arrays start counting at zero
-		return (bowls[19 - 1] + bowls[20 - 1] >= 10);
+		return nextAction;
 	}
 }
